@@ -1,0 +1,2808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EarnPlay - Gaming Apps</title>
+
+<meta name="description"
+content="Discover gaming apps, rewards and gaming opportunities.">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#030b07;
+    color:#ffffff;
+    overflow-x:hidden;
+
+    background-image:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(32,230,107,.10),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(123,255,72,.07),
+            transparent 28%
+        );
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.22;
+    z-index:-1;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:42px 42px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:rgba(4,15,9,.88);
+    border-bottom:1px solid #1a4728;
+    padding:16px 6%;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.25);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:27px;
+    font-weight:900;
+    color:#39f477;
+
+    text-shadow:
+        0 0 18px rgba(57,244,119,.25);
+}
+
+.logo span{
+    color:#ffffff;
+}
+
+nav a{
+    color:#d6e4da;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:15px;
+    font-weight:700;
+    transition:.2s;
+}
+
+nav a:hover{
+    color:#45f57c;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    padding:82px 6% 70px;
+    text-align:center;
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 0,
+            #165a2d 0%,
+            transparent 38%
+        ),
+        linear-gradient(
+            180deg,
+            #06140b,
+            #030b07
+        );
+}
+
+.hero:before,
+.hero:after{
+    content:"💵";
+
+    position:absolute;
+
+    font-size:44px;
+
+    opacity:.13;
+
+    animation:
+        moneyFloat 7s ease-in-out infinite;
+}
+
+.hero:before{
+    left:8%;
+    top:28%;
+}
+
+.hero:after{
+    right:9%;
+    top:52%;
+
+    animation-delay:-3s;
+}
+
+.hero-content{
+    max-width:900px;
+    margin:auto;
+
+    position:relative;
+    z-index:1;
+}
+
+.badge{
+    display:inline-flex;
+
+    align-items:center;
+    gap:7px;
+
+    background:rgba(15,65,32,.8);
+
+    color:#54ff8a;
+
+    border:1px solid #2c914b;
+
+    padding:9px 16px;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    box-shadow:
+        0 0 25px rgba(32,230,107,.12);
+
+    animation:
+        badgePulse 2.3s ease-in-out infinite;
+}
+
+.hero h1{
+    font-size:clamp(38px,6vw,64px);
+
+    line-height:1.08;
+
+    margin:22px 0 18px;
+
+    font-weight:950;
+
+    letter-spacing:-1.5px;
+}
+
+.hero h1 span{
+    background:
+        linear-gradient(
+            90deg,
+            #22e86b,
+            #b6ff5a,
+            #22e86b
+        );
+
+    background-size:200% auto;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:
+        gradientMove 3s linear infinite;
+}
+
+.hero p{
+    color:#a9b9ae;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    max-width:700px;
+
+    margin:auto;
+}
+
+
+/* =========================
+   TELEGRAM
+========================= */
+
+.telegram-section{
+    padding:25px 6%;
+    background:#06110a;
+}
+
+.telegram-box{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:20px 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(18,60,31,.95),
+            rgba(7,28,16,.95)
+        );
+
+    border:1px solid #247842;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.25),
+        0 0 30px rgba(32,230,107,.05);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.telegram-box:after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-30%;
+
+    width:25%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.08),
+            transparent
+        );
+
+    transform:skewX(-20deg);
+
+    animation:shine 5s infinite;
+}
+
+.telegram-logo{
+    width:58px;
+    height:58px;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    background:#229ed9;
+
+    padding:9px;
+
+    object-fit:contain;
+
+    position:relative;
+
+    z-index:1;
+}
+
+.telegram-text{
+    flex:1;
+
+    position:relative;
+
+    z-index:1;
+}
+
+.telegram-text h2{
+    font-size:21px;
+    margin-bottom:6px;
+}
+
+.telegram-text p{
+    color:#9fb0a5;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.telegram-btn{
+    background:#229ed9;
+
+    color:#ffffff;
+
+    padding:13px 21px;
+
+    border-radius:9px;
+
+    font-weight:900;
+
+    font-size:14px;
+
+    text-decoration:none;
+
+    white-space:nowrap;
+
+    transition:.25s;
+
+    position:relative;
+
+    z-index:1;
+
+    box-shadow:
+        0 7px 20px rgba(34,158,217,.2);
+}
+
+.telegram-btn:hover{
+    background:#168dcc;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(34,158,217,.3);
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-section{
+    padding:25px 6%;
+    background:#06110a;
+}
+
+.search-box{
+    max-width:650px;
+    margin:auto;
+    position:relative;
+}
+
+.search-box input{
+    width:100%;
+
+    padding:17px 20px;
+
+    border-radius:13px;
+
+    border:1px solid #31533b;
+
+    outline:none;
+
+    background:#0a1a10;
+
+    color:#ffffff;
+
+    font-size:15px;
+
+    box-shadow:
+        inset 0 0 18px rgba(0,0,0,.25);
+
+    transition:.25s;
+}
+
+.search-box input:focus{
+    border-color:#36ef75;
+
+    box-shadow:
+        0 0 0 3px rgba(32,230,107,.10),
+        0 0 25px rgba(32,230,107,.08);
+}
+
+.search-box input::placeholder{
+    color:#718077;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container{
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:55px 6%;
+}
+
+.section-title{
+    margin-bottom:28px;
+}
+
+.section-title h2{
+    font-size:30px;
+}
+
+.section-title p{
+    margin-top:8px;
+    color:#91a398;
+}
+
+
+/* =========================
+   GAME GRID
+========================= */
+
+.games-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:22px;
+}
+
+
+/* =========================
+   GAME CARD
+========================= */
+
+.game-card{
+    background:
+        linear-gradient(
+            160deg,
+            #112319,
+            #08130c
+        );
+
+    border:1px solid #21482d;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    position:relative;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.2);
+}
+
+.game-card:hover{
+    transform:
+        translateY(-8px)
+        scale(1.012);
+
+    border-color:#35ec72;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.35),
+        0 0 30px rgba(32,230,107,.10);
+}
+
+
+/* =========================
+   GAME IMAGE
+========================= */
+
+.game-image{
+    width:100%;
+
+    height:180px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #12351e,
+            #0c2114
+        );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.game-image:after{
+    content:"";
+
+    position:absolute;
+
+    inset:-50%;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent 42%,
+            rgba(255,255,255,.16) 50%,
+            transparent 58%
+        );
+
+    transform:translateX(-60%);
+
+    pointer-events:none;
+}
+
+.game-card:hover .game-image:after{
+    animation:
+        imageSweep 1.1s ease;
+}
+
+.game-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.game-card:hover .game-image img{
+    transform:scale(1.06);
+}
+
+.placeholder{
+    font-size:55px;
+}
+
+
+/* =========================
+   HOT STICKER
+========================= */
+
+.game-card:after{
+    content:"🔥 HOT";
+
+    position:absolute;
+
+    top:10px;
+    left:10px;
+
+    z-index:5;
+
+    font-size:13px;
+
+    font-weight:1000;
+
+    letter-spacing:.5px;
+
+    padding:7px 10px;
+
+    border-radius:999px;
+
+    color:#ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3d19,
+            #ff9f1a
+        );
+
+    box-shadow:
+        0 5px 18px rgba(255,75,20,.35);
+
+    animation:
+        hotBounce 1.8s ease-in-out infinite;
+}
+
+
+/* =========================
+   GAME INFO
+========================= */
+
+.game-info{
+    padding:18px;
+}
+
+.game-name{
+    font-size:19px;
+
+    font-weight:800;
+
+    margin-bottom:12px;
+}
+
+.game-meta{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:17px;
+
+    color:#aebbb2;
+
+    font-size:14px;
+}
+
+.rating{
+    color:#ffd43b;
+
+    font-weight:bold;
+}
+
+.file-size{
+    color:#aebbb2;
+}
+
+
+/* =========================
+   DOWNLOAD BUTTON
+========================= */
+
+.download-btn{
+    display:block;
+
+    width:100%;
+
+    padding:14px;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            90deg,
+            #12c957,
+            #39f477,
+            #12c957
+        );
+
+    background-size:200% auto;
+
+    color:#ffffff;
+
+    font-size:15px;
+
+    font-weight:950;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:
+        0 7px 20px rgba(22,201,87,.20);
+
+    animation:
+        buttonGradient 3s linear infinite;
+}
+
+.download-btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(32,230,107,.30);
+}
+
+.download-btn:active{
+    transform:scale(.98);
+}
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how-section{
+    background:#06110a;
+
+    padding:55px 6%;
+}
+
+.steps{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.step{
+    padding:27px;
+
+    background:
+        linear-gradient(
+            160deg,
+            #102117,
+            #08130c
+        );
+
+    border:1px solid #21482d;
+
+    border-radius:16px;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.step:hover{
+    transform:translateY(-5px);
+
+    border-color:#35ec72;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.25);
+}
+
+.step-icon{
+    font-size:38px;
+
+    margin-bottom:15px;
+
+    animation:
+        iconFloat 2.8s ease-in-out infinite;
+}
+
+.step h3{
+    margin-bottom:8px;
+}
+
+.step p{
+    color:#9aaa9f;
+
+    line-height:1.6;
+
+    font-size:14px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#020804;
+
+    border-top:1px solid #1d3324;
+
+    padding:40px 6%;
+}
+
+.footer-content{
+    max-width:1100px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.footer-content p{
+    color:#7f9085;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    margin-top:12px;
+}
+
+.copyright{
+    margin-top:25px;
+
+    padding-top:20px;
+
+    border-top:1px solid #18271c;
+
+    color:#647269;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   NO RESULTS
+========================= */
+
+.no-results{
+    display:none;
+
+    text-align:center;
+
+    color:#84948a;
+
+    padding:40px 0;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes gradientMove{
+
+    to{
+        background-position:200% center;
+    }
+
+}
+
+@keyframes hotBounce{
+
+    0%,100%{
+        transform:
+            rotate(-2deg)
+            scale(1);
+    }
+
+    50%{
+        transform:
+            rotate(2deg)
+            scale(1.08);
+    }
+
+}
+
+@keyframes badgePulse{
+
+    0%,100%{
+        box-shadow:
+            0 0 15px rgba(32,230,107,.08);
+    }
+
+    50%{
+        box-shadow:
+            0 0 28px rgba(32,230,107,.22);
+    }
+
+}
+
+@keyframes buttonGradient{
+
+    to{
+        background-position:200% center;
+    }
+
+}
+
+@keyframes shine{
+
+    0%{
+        left:-30%;
+    }
+
+    35%,100%{
+        left:130%;
+    }
+
+}
+
+@keyframes imageSweep{
+
+    0%{
+        transform:translateX(-60%);
+    }
+
+    100%{
+        transform:translateX(60%);
+    }
+
+}
+
+@keyframes moneyFloat{
+
+    0%,100%{
+        transform:
+            translateY(0)
+            rotate(-6deg);
+    }
+
+    50%{
+        transform:
+            translateY(-18px)
+            rotate(7deg);
+    }
+
+}
+
+@keyframes iconFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-7px);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:950px){
+
+    .games-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+}
+
+@media (max-width:650px){
+
+    header{
+        padding:16px 5%;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        padding:55px 5%;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .telegram-section{
+        padding:18px 5%;
+    }
+
+    .telegram-box{
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:25px 18px;
+    }
+
+    .telegram-text h2{
+        font-size:19px;
+    }
+
+    .telegram-btn{
+        width:100%;
+
+        text-align:center;
+    }
+
+    .container{
+        padding:40px 5%;
+    }
+
+    .games-grid{
+        grid-template-columns:1fr;
+    }
+
+    .steps{
+        grid-template-columns:1fr;
+    }
+
+    .game-image{
+        height:205px;
+    }
+
+}
+
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *:before,
+    *:after{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="navbar">
+
+        <div class="logo">
+            Earn<span>Play</span>
+        </div>
+
+        <nav>
+
+            <a href="#games">
+                Games
+            </a>
+
+            <a href="#how">
+                How It Works
+            </a>
+
+            <a href="#telegram">
+                Telegram
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🎮 PLAY • REWARDS • FUN
+        </div>
+
+        <h1>
+
+            Play Games &
+
+            <span>
+                Discover Rewards
+            </span>
+
+        </h1>
+
+        <p>
+
+            Explore gaming apps, check ratings
+            and file sizes, and download games
+            from trusted sources.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     TELEGRAM
+========================= -->
+
+<section
+    class="telegram-section"
+    id="telegram"
+>
+
+    <div class="telegram-box">
+
+        <img
+            src="https://cdn.phototourl.com/free/2026-09-08-6fc391a7-c806-4264-b682-4e4289054d2f.png"
+            alt="Telegram"
+            class="telegram-logo"
+        >
+
+        <div class="telegram-text">
+
+            <h2>
+                Join Our Telegram Channel
+            </h2>
+
+            <p>
+                Get new games, updates and
+                important announcements.
+            </p>
+
+        </div>
+
+        <a
+            href="https://t.me/+8xtiGxYoGtZmOGM1"
+            class="telegram-btn"
+            target="_blank"
+            rel="noopener"
+        >
+
+            JOIN TELEGRAM
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<section class="search-section">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔎 Search gaming apps..."
+            onkeyup="searchGames()"
+        >
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     GAMES
+========================= -->
+
+<main
+    class="container"
+    id="games"
+>
+
+    <div class="section-title">
+
+        <div
+            style="
+                display:inline-block;
+                font-weight:1000;
+                font-size:14px;
+                letter-spacing:1px;
+                color:#7dff5c;
+                margin-bottom:8px;
+                animation:hotBounce 1.8s ease-in-out infinite;
+            "
+        >
+            🔥 HOT PICKS • NEW & TRENDING
+        </div>
+
+        <h2>
+            🔥 Gaming Apps
+        </h2>
+
+        <p>
+            Choose a game and download it.
+        </p>
+
+    </div>
+
+
+    <div
+        class="games-grid"
+        id="gamesGrid"
+    >
+
+
+      <!-- =================================
+             567 SLOTS
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/free/2026-09-11-c9d7beb9-5787-4d1d-872b-d4f7c98cbcfe.jpg"
+                    alt="567 SLOTS"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    567 SLOTS
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.2
+                    </span>
+
+                    <span class="file-size">
+                        📦 36.16 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://join567slots0.com/?code=4D12NRF3FHU&t=1788971536"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+      <!-- =================================
+             Hi RUMMY
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/free/2026-09-11-41e00c88-2c4d-4719-8acc-b107c2580cac.jpg"
+                    alt="Hi RUMMY"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    Hi RUMMY
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.6
+                    </span>
+
+                    <span class="file-size">
+                        📦 36.13 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://joinhirummy.top/?code=RX3UG6RE5KP&t=1788971896"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+      <!-- =================================
+             RUMMY LUDO
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/free/2026-09-11-f58918cd-7070-4ce0-99ad-a2443b3d210f.jpg"
+                    alt="RUMMY LUDO"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    RUMMY LUDO
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.9
+                    </span>
+
+                    <span class="file-size">
+                        📦 36.12 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://rummyludo7.download/?code=WZTU3NJSG7B&t=1789130337"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+      <!-- =================================
+             SPIN CRUSH
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/free/2026-09-11-371fd668-df4f-46c6-b4ca-42339ca13249.jpg"
+                    alt="SPIN CRUSH"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    SPIN CRUSH
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.7
+                    </span>
+
+                    <span class="file-size">
+                        📦 36.13 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://cklfjeselfs.safelyearnmillionsbysharingonepersonaqfxzqyj9.com/?code=ADE5XTV32BK&t=1789130818"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+      <!-- =================================
+             JaiHo SPIN
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/free/2026-09-11-b3e3fc61-b896-4a1f-b09e-c4ad7ecfb195.jpg"
+                    alt="JaiHo SPIN"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    JaiHo SPIN
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.8
+                    </span>
+
+                    <span class="file-size">
+                        📦 36.72 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://3jaihospinwin.com/?code=SHG2VM8SFRG&t=1789131383"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+      <!-- =================================
+             SPIN 777
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/member/2026-09-11-e018412e-5031-419c-87ca-fba5ea13386e.jpg"
+                    alt="SPIN 777"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    SPIN 777
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.5
+                    </span>
+
+                    <span class="file-size">
+                        📦 35.90 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://spin777f.com/?code=7V9YMAYMJMR&t=1789131644"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+      <!-- =================================
+             JaiHo 777
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/member/2026-09-11-c7178735-4025-4c33-ac9c-c33f3edc46bd.jpg"
+                    alt="JaiHo 777"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    JaiHo 777
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.0
+                    </span>
+
+                    <span class="file-size">
+                        📦 36.11 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://jaiho91india.vip/?code=C4256NNP5LS&t=1789132189"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+      <!-- =================================
+             INR RUMMY
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/member/2026-09-11-23d1849d-c836-4e8e-bc99-fea1260690ea.jpg"
+                    alt="INR RUMMY"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    INR RUMMY
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 3.9
+                    </span>
+
+                    <span class="file-size">
+                        📦 36.13 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://inrrummy1.one/?code=8QUJVJLCPTP&t=1789131711"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+      <!-- =================================
+             101 Z
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/member/2026-09-11-9322e44c-000e-49d0-913c-0092bc4ccb4d.jpg"
+                    alt="101 Z"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    101 Z
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.1
+                    </span>
+
+                    <span class="file-size">
+                        📦 36.11 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://101z6.com/?code=398RNPU77EV&t=1789131841"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+      <!-- =================================
+             JaiHo 91
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/member/2026-09-11-d38c9163-44ab-427e-b73f-c1d92680ae7e.jpg"
+                    alt="JaiHo 91"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    JaiHo 91
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.9
+                    </span>
+
+                    <span class="file-size">
+                        📦 30.22 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://jaiho91india.vip/?code=C4256NNP5LS&t=1789132189"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             IND CLUB
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/free/2026-09-09-e4f1eb68-1645-4512-ac74-4bfdecf36d47.jpg"
+                    alt="IND CLUB"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    IND CLUB
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.8
+                    </span>
+
+                    <span class="file-size">
+                        📦 34.43 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://indclub95.com/?code=34UUVUCMP8D&t=1788969946"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             JAIHO SLOTS
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/free/2026-09-09-3626eaf1-a095-4336-9ad6-ce9d01845147.jpg"
+                    alt="JAIHO SLOTS"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    JAIHO SLOTS
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.5
+                    </span>
+
+                    <span class="file-size">
+                        📦 35 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://www.jaihoslots17.com/?code=EGPP5Q2US3B&t=1788970623"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             YONO ARCADE
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/free/2026-09-10-ebcea383-aecd-43c5-b51c-97c0a2a59da0.jpg"
+                    alt="YONO ARCADE"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    YONO ARCADE
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.9
+                    </span>
+
+                    <span class="file-size">
+                        📦 34.54 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://yonoarcadeapk11.com/?code=96L7HBSLBRB&t=1788972360"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             JAIHO WIN
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/free/2026-09-09-0187a6a8-b3cf-4f28-99f0-57ad99d2aae5.jpg"
+                    alt="JAIHO WIN"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    JAIHO WIN
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.0
+                    </span>
+
+                    <span class="file-size">
+                        📦 34 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://www.jaihowin5.com/?code=1XNMEK1B29D&t=1788971713"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+              <!-- =================================
+             T989
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/member/2026-09-11-bd44a823-e50b-4775-ab9e-0a96dcdb27c1.jpg"
+                    alt="T989"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    T989
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.9
+                    </span>
+
+                    <span class="file-size">
+                        📦 88.19 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://download.t989.com/?code=270242"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+             
+      <!-- =================================
+             MONEY RUMMY
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/member/2026-09-11-4f731c2b-04fe-4ce3-822b-be9a6076c45b.jpg"
+                    alt="MONEY RUMMY"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    MONEY RUMMY
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.8
+                    </span>
+
+                    <span class="file-size">
+                        📦 36.45 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://moneyrummyvv.com/?code=T1X648Z3ADY&t=1789133068"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+              <!-- =================================
+             GOLD RUMMY
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/member/2026-09-11-62b3abdf-7614-490a-9d20-658a1750e618.jpg"
+                    alt="GOLD RUMMY"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    GOLD RUMMY
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.4
+                    </span>
+
+                    <span class="file-size">
+                        📦 36.22 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://goldrummy24.com/?code=JLXG2RQ6LJ1&t=1789133209"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+              <!-- =================================
+             789 JACKPOTS
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/member/2026-09-11-804d24cc-eb69-4b20-8ee6-53bddac71457.jpg"
+                    alt="789 JACKPOTS"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    789 JACKPOTS
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.6
+                    </span>
+
+                    <span class="file-size">
+                        📦 36.23 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://join789jackpots2.cc/?code=J7ZCHH88717&t=1789133363"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+                    <!-- =================================
+             RUMBLE RUMMY
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/member/2026-09-11-73b7f852-7dca-4d86-b4c0-db4a08bb8ed7.jpg"
+                    alt="RUMBLE RUMMY"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    RUMBLE RUMMY
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.0
+                    </span>
+
+                    <span class="file-size">
+                        📦 35.95 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://www.rumblerummy444.net/?code=UC0XFDZ4SU3&t=1789134370"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+                    <!-- =================================
+             BOSS RUMMY
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/member/2026-09-11-f25f311e-fd37-481d-aba6-039eb8116e0e.jpg"
+                    alt="BOSS RUMMY"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    BOSS RUMMY
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.6
+                    </span>
+
+                    <span class="file-size">
+                        📦 35.90 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://www.bossrummyc.com/?code=0T85R9KVDER&t=1789134449"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+                    <!-- =================================
+             YONO RUMMY
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/member/2026-09-12-31bad3bd-6cd3-4dfe-a658-c3321a6b4c81.jpg"
+                    alt="YONO RUMMY"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    YONO RUMMY
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.6
+                    </span>
+
+                    <span class="file-size">
+                        📦 20.38 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://yonorummy056.com/?code=VIPQN2KM8XN&t=1789218227"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+              <!-- =================================
+             WIN RUMMY
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/member/2026-09-11-826d54fc-76b9-487d-befe-f1b06f317bc0.jpg"
+                    alt="WIN RUMMY"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    WIN RUMMY
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.2
+                    </span>
+
+                    <span class="file-size">
+                        📦 36.12 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://www.winrummy37.com/?code=8JTYU8H5YU4&t=1789133459"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+              <!-- =================================
+             RUMMY 888
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/member/2026-09-11-79001d9a-ff7d-4db3-9ed7-118c20d37264.jpg"
+                    alt="RUMMY 888"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    RUMMY 888
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.0
+                    </span>
+
+                    <span class="file-size">
+                        📦 36.12 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://rummy888vip41.com/?code=7WTDB1VVPUF&t=1789133864"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+              <!-- =================================
+             MAX RUMMY
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/member/2026-09-11-6e32876b-4f0e-43d8-a6ea-172a280c17c8.jpg"
+                    alt="MAX RUMMY"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    MAX RUMMY
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.7
+                    </span>
+
+                    <span class="file-size">
+                        📦 36.33 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://www.maxrummy3.com/?code=QUMURMVHT7R&t=1789134121"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+              <!-- =================================
+             YONO SLOTS
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/member/2026-09-11-9f415727-1601-4b87-aef0-536096231f8d.jpg"
+                    alt="YONO SLOTS"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    YONO SLOTS
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.9
+                    </span>
+
+                    <span class="file-size">
+                        📦 36.13 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://d1klkzonq0wlhb.cloudfront.net/yonoslots_2DM49BGA1TP.apk"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             BINGO 101
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/free/2026-09-10-63649714-46b7-40fe-bebb-afed18993752.jpg"
+                    alt="BINGO 101"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    BINGO 101
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.7
+                    </span>
+
+                    <span class="file-size">
+                        📦 34.45 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://bingo101gg.net/?code=6YFCPRPH2ZC&t=1788972566"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             CLUB INR
+        ================================== -->
+
+        <div class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="https://cdn.phototourl.com/free/2026-09-10-8068f983-6cac-4995-8b1e-821150015a28.jpg"
+                    alt="CLUB INR"
+                >
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-name">
+                    CLUB INR
+                </div>
+
+                <div class="game-meta">
+
+                    <span class="rating">
+                        ⭐ 4.9
+                    </span>
+
+                    <span class="file-size">
+                        📦 34.23 MB
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://clubinrvip1.co/?code=9VCG8GDF7MQ&t=1788972059"
+                    class="download-btn"
+                    download
+                >
+
+                    DOWNLOAD
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             ADD MORE GAMES HERE
+        ==================================
+
+        Copy this complete game-card
+        and change:
+
+        1. Image
+        2. Game Name
+        3. Rating
+        4. File Size
+        5. Download Link
+
+        ================================== -->
+
+
+    </div>
+
+
+    <div
+        class="no-results"
+        id="noResults"
+    >
+
+        No games found.
+
+    </div>
+
+</main>
+
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section
+    class="how-section"
+    id="how"
+>
+
+    <div
+        class="section-title"
+        style="text-align:center;"
+    >
+
+        <h2>
+            How It Works
+        </h2>
+
+    </div>
+
+
+    <div class="steps">
+
+
+        <div class="step">
+
+            <div class="step-icon">
+                🎮
+            </div>
+
+            <h3>
+                Choose a Game
+            </h3>
+
+            <p>
+                Browse the available gaming
+                apps and choose the one you like.
+            </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+            <div class="step-icon">
+                ⬇️
+            </div>
+
+            <h3>
+                Download
+            </h3>
+
+            <p>
+                Check the rating and file size,
+                then download from the provided source.
+            </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+            <div class="step-icon">
+                🏆
+            </div>
+
+            <h3>
+                Play & Earn Rewards
+            </h3>
+
+            <p>
+                Where supported, follow the game's
+                own rules for rewards and promotions.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="logo">
+            Earn<span>Play</span>
+        </div>
+
+        <p>
+
+            Gaming and reward opportunities
+            in one place.
+
+            Reward availability depends on the
+            individual game, developer and
+            applicable terms.
+
+        </p>
+
+        <div class="copyright">
+
+            © 2026 EarnPlay.
+            All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================
+     SEARCH JAVASCRIPT
+========================= -->
+
+<script>
+
+function searchGames(){
+
+    const input =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    const games =
+        document
+        .querySelectorAll(".game-card");
+
+
+    let visibleGames = 0;
+
+
+    games.forEach(
+        function(game){
+
+            const name =
+                game
+                .querySelector(".game-name")
+                .textContent
+                .toLowerCase();
+
+
+            if(name.includes(input)){
+
+                game.style.display = "";
+
+                visibleGames++;
+
+            }
+
+            else{
+
+                game.style.display = "none";
+
+            }
+
+        }
+    );
+
+
+    const noResults =
+        document
+        .getElementById("noResults");
+
+
+    if(visibleGames === 0){
+
+        noResults.style.display = "block";
+
+    }
+
+    else{
+
+        noResults.style.display = "none";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+</html>
